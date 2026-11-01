@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta name="description" content="一个用原生 HTML、CSS 和 JavaScript 编写的待办清单。" />
+    <title>小步清单 · 我的第一个 GitHub 作品</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <span class="eyebrow">MY FIRST GITHUB PROJECT</span>
+        <h1>小步清单<span class="spark" aria-hidden="true">✳</span></h1>
+        <p>把想做的事写下来，一件一件完成。</p>
+      </header>
+
+      <section class="card" aria-labelledby="list-heading">
+        <div class="card-header">
+          <div>
+            <span class="section-label">TODAY'S FOCUS</span>
+            <h2 id="list-heading">我的待办</h2>
+          </div>
+          <span id="progress" class="progress" aria-live="polite">0 / 0 已完成</span>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label class="visually-hidden" for="task-input">新待办事项</label>
+          <input id="task-input" name="task" type="text" maxlength="80" placeholder="例如：把第一个作品上传到 GitHub" autocomplete="off" required />
+          <button class="add-button" type="submit">＋ 添加</button>
+        </form>
+
+        <div class="toolbar" role="group" aria-label="筛选待办">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="filter" type="button" data-filter="active" aria-pressed="false">未完成</button>
+          <button class="filter" type="button" data-filter="completed" aria-pressed="false">已完成</button>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-label="待办事项"></ul>
+        <p id="empty-state" class="empty-state">这里还没有待办。添加第一件小事吧！</p>
+
+        <div class="card-footer">
+          <span id="remaining">还剩 0 件待办</span>
+          <button id="clear-completed" class="text-button" type="button" disabled>清除已完成</button>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <p>你的清单保存在当前浏览器中。刷新页面后仍会保留。</p>
+        <p>用 HTML 搭结构 · CSS 做样式 · JavaScript 加交互</p>
+      </footer>
+    </main>
+  </body>
+</html>
